@@ -1,9 +1,18 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@alova/mock':
+    specifier: ^1.5.0
+    version: 1.5.0
+  '@alova/scene-svelte':
+    specifier: ^1.2.1
+    version: 1.2.1
   '@floating-ui/dom':
     specifier: 1.5.3
     version: 1.5.3
+  alova:
+    specifier: ^2.16.0
+    version: 2.16.0
 
 devDependencies:
   '@skeletonlabs/skeleton':
@@ -87,6 +96,14 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
     dev: true
+
+  /@alova/mock@1.5.0:
+    resolution: {integrity: sha512-4l0tlScxquL5n8y3lr2UBHGY4yaMsThBAsp4YBkfVZPdibagJNJtK1Z7ujamMKF5sVJU134KDze17/FVixcv1Q==}
+    dev: false
+
+  /@alova/scene-svelte@1.2.1:
+    resolution: {integrity: sha512-bAPoegtNM+RbLaTXgmcFFjpCvPMII87AzarSFY0zTnUReUhxYGdIwwyfe/6VS4ZiF/18UfUsRosK+DNjj1XwSQ==}
+    dev: false
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
@@ -716,6 +733,11 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
+
+  /alova@2.16.0:
+    resolution: {integrity: sha512-6d8NpI3yg7gX3mkP6vkMhazhWNmJJcxLqDAD1qyZ+JoYmxFTt/keRG0wrsGWinS7zRUP73vXHdXhmlrPIiMWvA==}
+    engines: {node: '>= 0.12.0'}
+    dev: false
 
   /ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
