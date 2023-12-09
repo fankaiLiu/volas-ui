@@ -6,20 +6,23 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-</script>
+	import { Toast, getToastStore,initializeStores } from '@skeletonlabs/skeleton';
+	initializeStores();
 
+</script>
+<Toast />
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase">Volas</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
+					href="https://discord.gg/HD27UHtyjY"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -27,15 +30,7 @@
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
+					href="https://github.com/salvo-rs/salvo-cli"
 					target="_blank"
 					rel="noreferrer"
 				>

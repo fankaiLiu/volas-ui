@@ -1,21 +1,31 @@
-<script>
+<script lang="ts">
 	import { useRequest } from 'alova';
 	import { alovaInst } from '../api.js';
+	import { getToastStore } from '@skeletonlabs/skeleton';
+	import type { ToastSettings } from '@skeletonlabs/skeleton';
 
 	const { loading, data, error } = useRequest(alovaInst.Get('/system/info'));
-</script>
 
-{#if $loading}
+	const toastStore = getToastStore();
+	//error
+	$: if ($error) {
+		console.log('Error is:', $error);
+		const t : ToastSettings= {
+			message: $error
+		};
+		toastStore.trigger(t);
+	}
+</script>
+<div class="container h-full mx-auto flex justify-center items-center">
+	{#if $loading}
 	<div>Loading...</div>
 {:else if $error}
-	<div>{$error.message}</div>
+	<div>error is {$error}</div>
 {:else}
-	<pre>responseData: {data}</pre>
+	<pre>responseData: {$data ? JSON.stringify($data) : 'Loading data...'}</pre>
 {/if}
-
-<div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2">Welcome to Skeleton.</h2>
+		<h2 class="h2">Welcome to Volas</h2>
 		<!-- Animated Logo -->
 		<figure>
 			<section class="img-bg" />
