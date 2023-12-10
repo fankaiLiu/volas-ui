@@ -3,6 +3,11 @@ import SvelteHook from 'alova/svelte';
 import GlobalFetch from 'alova/GlobalFetch';
 import { currentStatus } from './config';
 
+interface Response<T> {
+  code: number;
+  data: T;
+  msg: string;
+}
 
 export const alovaInst = createAlova({
   baseURL: "http://localhost:5800",

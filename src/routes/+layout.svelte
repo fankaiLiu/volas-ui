@@ -1,12 +1,13 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 	import { Toast, getToastStore,initializeStores } from '@skeletonlabs/skeleton';
+	import SidebarLeft from './SidebarLeft.svelte';
+	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
 	initializeStores();
 
 </script>
@@ -39,6 +40,10 @@
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
+	<svelte:fragment slot="sidebarLeft">
+	<SidebarLeft/>	
+	</svelte:fragment>	
+	<svelte:fragment slot="pageHeader">Page Header</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
