@@ -1,10 +1,13 @@
 <script lang="ts">
-	import { useRequest } from 'alova';
 	import { alovaInst } from '../api/api';
 	import { getToastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
-
-	const { loading, data, error } = useRequest(alovaInst.Get('/system/info'));
+	import { useRequest } from 'alova';
+	import type { SystemInfo } from '../api/system/info';
+	import type { Response } from '../api/api';
+	const { loading, data, error } = useRequest(
+		alovaInst.Get<{ data: Response<SystemInfo> }>('/system/info')
+	);
 
 	const toastStore = getToastStore();
 	//error

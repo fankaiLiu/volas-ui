@@ -1,8 +1,9 @@
 import { useRequest } from 'alova';
-import { alovaInst } from '../api';
-const { loading, data, error } = useRequest(alovaInst.Get('/system/info'));
-
-interface SystemInfo {
+import { alovaInst,type Response } from '../api';
+import type { Writable } from 'svelte/store';
+const { loading, data, error }: { loading: Writable<boolean>; data: Writable<Response<SystemInfo>>; error: any } = useRequest(alovaInst.Get('/system/info'));
+export const requestResult = useRequest(alovaInst.Get('/system/info'));
+export interface SystemInfo {
 	system_name: string;
 	kernel_version: string;
 	os_version: string;
