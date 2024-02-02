@@ -89,7 +89,12 @@ export const errorConfig: RequestConfig = {
   requestInterceptors: [
     (config: RequestOptions) => {
       // 拦截请求配置，进行个性化处理。
-      const url = config?.url?.concat('?token = 123');
+      console.log(config);
+      let jwt=localStorage.getItem('currentAuthority');
+      if(jwt){
+        config.headers['authorization'] = `Bearer ${jwt}`;
+      }
+      const url = "http://localhost:5800"+config?.url?.concat('?token = 123');
       return { ...config, url };
     },
   ],
